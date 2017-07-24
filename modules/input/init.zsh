@@ -106,7 +106,7 @@ fi
 expand-or-complete-with-redisplay() {
   print -n '...'
   zle expand-or-complete
-  zle redisplay
+  # zle redisplay # NOTE I belive this screws with the pure prompt, disabled
 }
 zle -N expand-or-complete-with-redisplay
 bindkey "${key_info[Control]}I" expand-or-complete-with-redisplay
