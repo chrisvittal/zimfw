@@ -5,19 +5,35 @@
 # any custom stuff should go here.
 # ensure that 'custom' exists in the zmodules array in your .zimrc
 
+## fpath
+rustcomppath="${HOME}/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/share/zsh/site-functions"
+fpath=(${ZDOTDIR:-"${HOME}/.zsh"}/completions ${rustcomppath} ${fpath})
+
+## Aliases
 alias mkdir='mkdir -p'
 
 # remove default aliases from df and du
 unalias df
 unalias du
 
-# some keybindings
+# change default alias for ls, rest are fine
+alias ls='ls --color=auto'
+
+## Some Keybindings
 bindkey '^I' menu-expand-or-complete
 
+## Pager settings
 export LESS='-R -M --shift 10'
+
+## pacaur environment variables
+export AURDEST=${HOME}/.cache/pacaur
+
 
 # redo less settings
 if [[ ${PAGER} == 'less' ]]; then
+    # configure git operations to leave output on screen
+    # alias git='LESS="-X ${LESS}" git'
+
     export LESS_TERMCAP_mb=$'\E[1;31m'      # Begins blinking.
     export LESS_TERMCAP_md=$'\E[1;34m'      # Begins bold.
     export LESS_TERMCAP_me=$'\E[0m'         # Ends mode.
@@ -26,3 +42,5 @@ if [[ ${PAGER} == 'less' ]]; then
     export LESS_TERMCAP_ue=$'\E[0m'         # Ends underline.
     export LESS_TERMCAP_us=$'\E[4;38;5;28m' # Begins underline.
 fi
+
+# PS2 prompt settings
