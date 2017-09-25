@@ -31,8 +31,8 @@ export AURDEST=${HOME}/.cache/pacaur
 
 # redo less settings
 if [[ ${PAGER} == 'less' ]]; then
-    # configure git operations to leave output on screen
-    # alias git='LESS="-X ${LESS}" git'
+    # configure a git alias to leave output on screen
+    alias gitx='LESS="-X ${LESS}" git'
 
     export LESS_TERMCAP_mb=$'\E[1;31m'      # Begins blinking.
     export LESS_TERMCAP_md=$'\E[1;34m'      # Begins bold.
