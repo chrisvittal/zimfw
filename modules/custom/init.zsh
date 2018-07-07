@@ -11,6 +11,7 @@ fpath=(${ZDOTDIR:-"${HOME}/.zsh"}/completions ${rustcomppath} ${fpath})
 
 ## Aliases
 alias mkdir='mkdir -p'
+alias svim='sudo -E vim'
 
 # remove default aliases from df and du
 unalias df
