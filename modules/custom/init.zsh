@@ -12,6 +12,7 @@ fpath=(${ZDOTDIR:-"${HOME}/.zsh"}/completions ${rustcomppath} ${fpath})
 ## Aliases
 alias mkdir='mkdir -p'
 alias svim='sudo -E vim'
+alias p='$PAGER'
 
 # remove default aliases from df and du
 unalias df
@@ -25,10 +26,6 @@ bindkey '^I' menu-expand-or-complete
 
 ## Pager settings
 export LESS='-R -M --shift 10'
-
-## pacaur environment variables
-export AURDEST=${HOME}/.cache/pacaur
-
 
 # redo less settings
 if [[ ${PAGER} == 'less' ]]; then
