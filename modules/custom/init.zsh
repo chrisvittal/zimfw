@@ -13,6 +13,8 @@ fpath=(${ZDOTDIR:-"${HOME}/.zsh"}/completions ${rustcomppath} ${fpath})
 alias mkdir='mkdir -p'
 alias svim='sudo -E vim'
 alias p='$PAGER'
+alias Conda='$CONDA_HOME/bin/conda'
+alias Activate='source $CONDA_HOME/bin/activate'
 
 # remove default aliases from df and du
 unalias df
